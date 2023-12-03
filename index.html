@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traces</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- <div class="header">
+        <h1>Traces</h1>
+    </div> -->
+    <div class="sidebar-and-container-parent">
+        <div class="sidebar">
+            <a href="#" class="sidebar-icon"><img class="icon-image" id="options-image" src="icons8-menu-30.png"
+                    alt=""></a>
+            <a href="#" class="sidebar-icon"><img class="icon-image"
+                    src="icons8-top-double-horizontal-column-pattern-of-frame-24.png" alt=""></a>
+            <a href="#" class="sidebar-icon"><img class="icon-image" src="icons8-view-quilt-50.png" alt=""></a>
+            <a href="#" class="sidebar-icon"><img class="icon-image"
+                    src="icons8-top-double-horizontal-column-pattern-of-frame-24.png" alt=""></a>
+            <a href="#" class="sidebar-icon"><img class="icon-image" src="icons8-box-64.png" alt=""></a>
+            <a href="#" class="sidebar-icon"><img class="icon-image" src="icons8-sidebar-48.png" alt=""></a>
+            <a href="#" class="sidebar-icon"><img class="icon-image" src="icons8-bell-24.png" alt=""></a>
+            <a href="#" class="sidebar-icon"><img class="icon-image" src="icons8-fingerprint-48.png" alt=""></a>
+            <a href="#" class="sidebar-icon"><img class="icon-image" src="icons8-users-16.png" alt=""></a>
+        </div>
+
+        <div class="container">
+            <!-- <div class="main-content" id="mainContent"> -->
+            <div class="main-wrapper">
+                <p class="traces-text">Traces</p>
+                <p class="traces-desc-text">Here you can use this panel to assess incoming trace alerts for data being
+                    leaked across all entities</p>
+                <div class="filter-container">
+                    <button class="filter-btn" onclick="showFilterOptions()">Filters</button>
+                    <button class="applied-btn">Filters Applied</button>
+                    <input type="text" class="search-bar" placeholder="Search...">
+                </div>
+
+                <div class="main-content" id="mainContent">
+                    <!-- <div class="filters-card-and-traces"> -->
+                    <div class="filters-card" id="filtersCard">
+                        <p class="mt-10 bt-1 pb-10">Filter traces</p>
+                        <p class="mt-10 pb-10 bt-1" onclick="showEntityOptions()">Entity</p>
+                        <div class="entity-card" id="entityCard">
+                            <div>
+                                <label><input type="checkbox" value="aperturescience"
+                                        onchange="applyFilters()">aperturescience</label>
+                            </div>
+                            <div>
+                                <label><input type="checkbox" value="blackmesa"
+                                        onchange="applyFilters()" class="mt-10">blackmesa</label>
+                            </div>
+                        </div>
+                        <p class="mt-10 pb-10 bt-1" onclick="showSeverityOptions()">Severity</p>
+                        <div class="severity-card" id="severityCard">
+                            <div>
+                                <label><input type="checkbox" value="high" onchange="applyFilters()">High</label>
+                            </div>
+                            <div>
+                                <label><input type="checkbox" value="medium" onchange="applyFilters()">Medium</label>
+                            </div>
+                            <div>
+                                <label><input type="checkbox" value="low" onchange="applyFilters()" class="mt-10">Low</label>
+                            </div>
+                        </div>
+                        <p class="mt-10 pb-10">Category</p>
+                        <p class="mt-10 pb-10 bt-1">Sort Traces</p>
+                        <div class="sort-radio-buttons">
+                            <div>
+                                <label><input type="radio" name="sortOption" value="highToLow"
+                                        onchange="sortByPriority('highToLow')">Priority (high to low)</label>
+                            </div>
+                            <div>
+                                <label><input type="radio" name="sortOption" value="lowToHigh"
+                                        onchange="sortByPriority('lowToHigh')">Priority (low to
+                                    high)</label>
+                            </div>
+                            <!-- <div>
+                                <label><input type="radio" name="sortOption" value="newToOld">Date (new to old)</label>
+                            </div> -->
+                            <!-- <div>
+                                <label><input type="radio" name="sortOption" value="oldToNew">Date (old to new)</label>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="new-and-trace-container" id="mainContentOfTraces">
+                        <!-- <div class="new">
+                            <div>
+                                <img class="slide-up-image" src="icons8-slide-up-48.png" alt="">
+                            </div>
+                            <div>
+                                <p>New</p>
+                            </div>
+                        </div> -->
+                        <div class="trace apertureTextTrace high aperture-science-high">
+                            <div class="trace-top-content">
+                                <div>
+                                    <p class="high-text">HIGH</p>
+                                </div>
+                                <p class="account-text">Account chel@aperturescience.com found for sale on
+                                    breachforums.vc</p>
+                            </div>
+                            <div class="trace-bottom-content">
+                                <div class="account-exposure">
+                                    <p class="account-exposure-text">Account Exposure</p>
+                                    <p class="date-text">4/20/2023</p>
+                                </div>
+                                <div>
+                                    <div class="entity">
+                                        <p class="entity-text">Entity</p>
+                                        <p class="aperture-text">aperturescience.com</p>
+                                    </div>
+                                    <div class="status">
+                                        <p class="status-text">Status</p>
+                                        <p class="new-text">New</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="view-details-button" onclick="showDetailsCard()">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trace blackmesaTextTrace high black-mesa-high">
+                            <div class="trace-top-content">
+                                <div>
+                                    <p class="high-text">HIGH</p>
+                                </div>
+                                <p class="account-text">Account chel@aperturescience.com found for sale on
+                                    breachforums.vc</p>
+                            </div>
+                            <div class="trace-bottom-content">
+                                <div class="account-exposure">
+                                    <p class="account-exposure-text">Account Exposure</p>
+                                    <p class="date-text">4/20/2022</p>
+                                </div>
+                                <div>
+                                    <div class="entity">
+                                        <p class="entity-text">Entity</p>
+                                        <p class="aperture-text">blackmesa.com</p>
+                                    </div>
+                                    <div class="status">
+                                        <p class="status-text">Status</p>
+                                        <p class="new-text">New</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="view-details-button" onclick="showDetailsCard()">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trace apertureTextTrace medium aperture-science-medium">
+                            <div class="trace-top-content">
+                                <div>
+                                    <p class="high-text status-text">MEDIUM</p>
+                                </div>
+                                <p class="account-text">Account chel@aperturescience.com found for sale on
+                                    breachforums.vc</p>
+                            </div>
+                            <div class="trace-bottom-content">
+                                <div class="account-exposure">
+                                    <p class="account-exposure-text">Account Exposure</p>
+                                    <p class="date-text">4/20/2021</p>
+                                </div>
+                                <div>
+                                    <div class="entity">
+                                        <p class="entity-text">Entity</p>
+                                        <p class="aperture-text">aperturescience.com</p>
+                                    </div>
+                                    <div class="status">
+                                        <p class="status-text">Status</p>
+                                        <p class="new-text">New</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="view-details-button" onclick="showDetailsCard()">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trace blackmesaTextTrace medium black-mesa-medium">
+                            <div class="trace-top-content">
+                                <div>
+                                    <p class="high-text">MEDIUM</p>
+                                </div>
+                                <p class="account-text">Account chel@aperturescience.com found for sale on
+                                    breachforums.vc</p>
+                            </div>
+                            <div class="trace-bottom-content">
+                                <div class="account-exposure">
+                                    <p class="account-exposure-text">Account Exposure</p>
+                                    <p class="date-text">4/20/2020</p>
+                                </div>
+                                <div>
+                                    <div class="entity">
+                                        <p class="entity-text">Entity</p>
+                                        <p class="aperture-text">blackmesa.com</p>
+                                    </div>
+                                    <div class="status">
+                                        <p class="status-text">Status</p>
+                                        <p class="new-text">New</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="view-details-button" onclick="showDetailsCard()">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trace apertureTextTrace low aperture-science-low">
+                            <div class="trace-top-content">
+                                <div>
+                                    <p class="high-text">Low</p>
+                                </div>
+                                <p class="account-text">Account chel@aperturescience.com found for sale on
+                                    breachforums.vc</p>
+                            </div>
+                            <div class="trace-bottom-content">
+                                <div class="account-exposure">
+                                    <p class="account-exposure-text">Account Exposure</p>
+                                    <p class="date-text">4/20/2019</p>
+                                </div>
+                                <div>
+                                    <div class="entity">
+                                        <p class="entity-text">Entity</p>
+                                        <p class="aperture-text">aperturescience.com</p>
+                                    </div>
+                                    <div class="status">
+                                        <p class="status-text">Status</p>
+                                        <p class="new-text">New</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="view-details-button" onclick="showDetailsCard()">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trace blackmesaTextTrace low black-mesa-low">
+                            <div class="trace-top-content">
+                                <div>
+                                    <p class="high-text">Low</p>
+                                </div>
+                                <p class="account-text">Account chel@aperturescience.com found for sale on
+                                    breachforums.vc</p>
+                            </div>
+                            <div class="trace-bottom-content">
+                                <div class="account-exposure">
+                                    <p class="account-exposure-text">Account Exposure</p>
+                                    <p class="date-text">4/20/2018</p>
+                                </div>
+                                <div>
+                                    <div class="entity">
+                                        <p class="entity-text">Entity</p>
+                                        <p class="aperture-text">blackmesa.com</p>
+                                    </div>
+                                    <div class="status">
+                                        <p class="status-text">Status</p>
+                                        <p class="new-text">New</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="view-details-button" onclick="showDetailsCard()">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                    <div class="details-card" id="detailsCard">
+                        <p class="found">024-**-**** found in file subject_info.xlsx</p>
+                        <div class="right-second-box">
+                            <div class="mt-6">
+                                <p>High</p>
+                            </div>
+                            <p class="mt-10">Date: 1/20/2023</p>
+                            <p class="mt-10">Entity: aperturescience.com</p>
+                            <p class="mt-10">Category: Date Leak Detection</p>
+                            <p class="mt-10">Status: New</p>
+                            <p class="mt-10">Assigned to: Unassigned</p>
+                            <div>
+                                <p>EDIT</p>
+                            </div>
+                        </div>
+                        <div class="right-third-box">
+                            <p class="mt-6">Finding Guidance</p>
+                            <p>Confirm contents found in file are intentional and disclosable. If not, coordinate
+                                removale or takedown of the file internally.</p>
+                        </div>
+                        <div class="right-fourth-box">
+                            <p class="mt-6">File URL</p>
+                            <a href="#" class="side-anchor mt-10">https://www.internal.aperturescience.com/employees/files/subject_info.xlsx</a>
+                            <p class="mt-10">Filename: subject_info.xlsx</p>
+                            <p class="mt-10">Author: lazarusg08</p>
+                            <p class="mt-10">Match Type: Social Security Number</p>
+                            <p>Create Date: 2023-02-08</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+
+
+
+
+    <!-- <div class="filter-options-card" id="filterOptionsCard">
+        <div class="filter-option">
+            <label><input type="checkbox"> Option 1</label>
+        </div>
+        <div class="filter-option">
+            <label><input type="checkbox"> Option 2</label>
+        </div>
+        <div class="filter-option">
+            <label><input type="checkbox"> Option 3</label>
+        </div>
+        <button onclick="applyFilters()">Apply Filters</button>
+    </div> -->
+
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
